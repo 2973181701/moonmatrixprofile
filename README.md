@@ -112,8 +112,8 @@ let unusual = @mp.discords(profile, 2)
 
 ```moonbit nocheck
 pub struct Match {
-  index : Int
-  neighbor : Int
+  index : Int32
+  neighbor : Int32
   distance : Double
 }
 ```

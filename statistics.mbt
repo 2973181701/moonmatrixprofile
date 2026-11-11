@@ -1,7 +1,7 @@
 ///|
 // Condition each series before dot products. Invalid values become zero only
 // for recurrence arithmetic; every window containing them remains invalid.
-fn prepare(input : Array[Double], m : Int) -> Result[Prepared, ProfileError] {
+fn prepare(input : Array[Double], m : Int32) -> Result[Prepared, ProfileError] {
   let mut anchor = 0.0
   for x in input {
     if finite(x) {
@@ -77,10 +77,10 @@ fn prepare(input : Array[Double], m : Int) -> Result[Prepared, ProfileError] {
 ///|
 fn dot(
   a : Array[Double],
-  i : Int,
+  i : Int32,
   b : Array[Double],
-  j : Int,
-  m : Int,
+  j : Int32,
+  m : Int32,
 ) -> Double {
   let mut sum = 0.0
   let mut correction = 0.0
@@ -96,10 +96,10 @@ fn dot(
 ///|
 fn direct_distance(
   a : Prepared,
-  i : Int,
+  i : Int32,
   b : Prepared,
-  j : Int,
-  m : Int,
+  j : Int32,
+  m : Int32,
 ) -> Double {
   if a.constant[i] && b.constant[j] {
     return 0.0
@@ -120,10 +120,10 @@ fn direct_distance(
 ///|
 fn distance(
   a : Prepared,
-  i : Int,
+  i : Int32,
   b : Prepared,
-  j : Int,
-  m : Int,
+  j : Int32,
+  m : Int32,
   product : Double,
 ) -> Double {
   if a.constant[i] && b.constant[j] {

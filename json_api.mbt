@@ -77,8 +77,8 @@ fn json_series(value : Json) -> Result[Array[Double], ProfileError] {
 fn integer(
   fields : Map[String, Json],
   key : String,
-  default : Int,
-) -> Result[Int, ProfileError] {
+  default : Int32,
+) -> Result[Int32, ProfileError] {
   match fields.get(key) {
     None => Ok(default)
     Some(Number(n, ..)) =>

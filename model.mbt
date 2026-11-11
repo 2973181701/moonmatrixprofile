@@ -23,11 +23,11 @@ fn problem(code : String, message : String) -> ProfileError {
 #derive(Debug)
 pub struct Profile {
   self_join : Bool
-  window : Int
-  exclusion : Int
-  target_length : Int
+  window : Int32
+  exclusion : Int32
+  target_length : Int32
   distances : Array[Double?]
-  indices : Array[Int?]
+  indices : Array[Int32?]
   valid : Array[Bool]
 }
 
@@ -38,8 +38,8 @@ pub extend Profile with @debug.Debug::{to_repr}
 /// Evidence for a pair of windows.
 #derive(Eq, Debug)
 pub struct Match {
-  index : Int
-  neighbor : Int
+  index : Int32
+  neighbor : Int32
   distance : Double
 }
 
@@ -64,7 +64,7 @@ fn finite(x : Double) -> Bool {
 }
 
 ///|
-fn checked_window(n : Int, m : Int) -> Result[Unit, ProfileError] {
+fn checked_window(n : Int32, m : Int32) -> Result[Unit, ProfileError] {
   if m < 3 || m > n {
     Err(problem("E_WINDOW", "window must be between 3 and the series length"))
   } else {
@@ -73,7 +73,11 @@ fn checked_window(n : Int, m : Int) -> Result[Unit, ProfileError] {
 }
 
 ///|
-fn checked_work(a : Int, b : Int, limit : Int) -> Result[Unit, ProfileError] {
+fn checked_work(
+  a : Int32,
+  b : Int32,
+  limit : Int32,
+) -> Result[Unit, ProfileError] {
   if limit < 1 || a.to_int64() * b.to_int64() > limit.to_int64() {
     Err(
       problem(

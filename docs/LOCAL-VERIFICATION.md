@@ -6,6 +6,8 @@
 
 `node scripts/verify.mjs` 全部成功：MoonBit 无警告检查、格式检查、Wasm / Wasm GC / JavaScript 三个目标各 9 项测试、Wasm GC 构建、命令行示例、JavaScript 核心构建，以及 20 项 Node 集成测试。
 
+公开发布前已在独立安装的稳定工具链 `moon 0.1.20261104` / `moonc v0.10.20+65efd5b93` 下重新执行上述全部检查，并重建网页核心、重跑 STUMPY 对照与性能脚本。源码采用当前格式规则（`#derive`、`Int32`）；未修改电脑原有的全局工具链。
+
 STUMPY 对照见 `evidence/stumpy-validation.json`，性能实测见 `evidence/benchmark.json`。输入集合、版本、常量规则与数值比较方式均由验证脚本记录，不把并列索引差异当作距离错误。
 
 ## 浏览器实际操作

@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-11T02:01:16.826Z",
+  "date": "2026-11-11T06:36:59.872Z",
   "node": "v26.8.2",
   "platform": "win32",
   "arch": "x64",
   "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
-  "toolchain": "moon 0.1.20260920 (914d7da 2026-09-20) ~\\.moon\\bin\\moon.exe\nmoonc v0.10.14+7d59c7ec9 (2026-09-18) ~\\.moon\\bin\\moonc.exe\nmoonrun 0.1.20260920 (914d7da 2026-09-20) ~\\.moon\\bin\\moonrun.exe\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+  "toolchain": "moon 0.1.20261104 (940aa18 2026-11-04) ~\\Documents\\ChatGPT\\智能体开发\\moonmatrixprofile\\.toolchains\\stable\\bin\\moon.exe\nmoonc v0.10.20+65efd5b93 (2026-11-05) ~\\Documents\\ChatGPT\\智能体开发\\moonmatrixprofile\\.toolchains\\stable\\bin\\moonc.exe\nmoonrun 0.1.20261104 (940aa18 2026-11-04) ~\\Documents\\ChatGPT\\智能体开发\\moonmatrixprofile\\.toolchains\\stable\\bin\\moonrun.exe\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
   "includes": "JSON parse, MoonBit-compiled JS core, candidate selection, JSON stringify, host parse",
   "excludes": "build and initial warm-up; not a cross-language speed comparison",
   "seed": 73183,
@@ -13,55 +13,55 @@
       "name": "random-512",
       "samples": 512,
       "window": 48,
-      "median_ms": 9.959699999999998,
+      "median_ms": 11.624399999999994,
       "trials_ms": [
-        9.959699999999998,
-        16.336699999999993,
-        9.385999999999996
+        11.624399999999994,
+        12.933499999999995,
+        10.784200000000013
       ]
     },
     {
       "name": "random-1024",
       "samples": 1024,
       "window": 48,
-      "median_ms": 30.34019999999998,
+      "median_ms": 29.120900000000006,
       "trials_ms": [
-        30.34019999999998,
-        32.1927,
-        26.69640000000001
+        32.3913,
+        29.120900000000006,
+        28.058099999999996
       ]
     },
     {
       "name": "random-2048",
       "samples": 2048,
       "window": 48,
-      "median_ms": 116.55259999999998,
+      "median_ms": 101.78729999999996,
       "trials_ms": [
-        112.47379999999998,
-        121.20709999999997,
-        116.55259999999998
+        103.56440000000003,
+        95.39350000000002,
+        101.78729999999996
       ]
     },
     {
       "name": "random-4096",
       "samples": 4096,
       "window": 48,
-      "median_ms": 432.03189999999995,
+      "median_ms": 434.42330000000015,
       "trials_ms": [
-        437.299,
-        412.16059999999993,
-        432.03189999999995
+        382.61199999999985,
+        434.42330000000015,
+        456.62329999999974
       ]
     },
     {
       "name": "repeated-linear-512",
       "samples": 512,
       "window": 48,
-      "median_ms": 82.47270000000026,
+      "median_ms": 53.20309999999972,
       "trials_ms": [
-        82.93170000000009,
-        82.47270000000026,
-        80.14509999999973
+        53.048499999999876,
+        53.20309999999972,
+        57.13859999999977
       ]
     }
   ]

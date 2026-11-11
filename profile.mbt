@@ -1,9 +1,9 @@
 ///|
 fn accept(
   distances : Array[Double?],
-  indices : Array[Int?],
-  i : Int,
-  j : Int,
+  indices : Array[Int32?],
+  i : Int32,
+  j : Int32,
   value : Double,
 ) -> Unit {
   match (distances[i], indices[i]) {
@@ -27,10 +27,10 @@ fn accept(
 fn join(
   a : Prepared,
   b : Prepared,
-  m : Int,
-  exclusion : Int,
+  m : Int32,
+  exclusion : Int32,
   self_join : Bool,
-  target_length : Int,
+  target_length : Int32,
 ) -> Profile {
   let na = a.means.length()
   let nb = b.means.length()
@@ -86,9 +86,9 @@ fn join(
 /// 0; one constant has distance sqrt(window). Nonfinite windows are invalid.
 pub fn matrix_profile(
   series : Array[Double],
-  window : Int,
-  exclusion_zone? : Int,
-  max_pairs? : Int = 25000000,
+  window : Int32,
+  exclusion_zone? : Int32,
+  max_pairs~ : Int32 = 25000000,
 ) -> Result[Profile, ProfileError] {
   match checked_window(series.length(), window) {
     Err(e) => return Err(e)
@@ -119,8 +119,8 @@ pub fn matrix_profile(
 pub fn ab_join(
   source : Array[Double],
   target : Array[Double],
-  window : Int,
-  max_pairs? : Int = 25000000,
+  window : Int32,
+  max_pairs~ : Int32 = 25000000,
 ) -> Result[Profile, ProfileError] {
   match checked_window(source.length(), window) {
     Err(e) => return Err(e)
@@ -163,7 +163,7 @@ pub fn ab_join(
 pub fn distance_profile(
   query : Array[Double],
   target : Array[Double],
-  max_pairs? : Int = 25000000,
+  max_pairs~ : Int32 = 25000000,
 ) -> Result[Array[Double?], ProfileError] {
   let m = query.length()
   match checked_window(target.length(), m) {

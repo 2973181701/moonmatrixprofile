@@ -1,12 +1,12 @@
 ///|
-fn overlap(a : Int, b : Int, window : Int) -> Bool {
+fn overlap(a : Int32, b : Int32, window : Int32) -> Bool {
   (a - b).abs() < window
 }
 
 ///|
 /// Select nonoverlapping high-distance windows. These are unusual shapes,
 /// not calibrated failure probabilities. Equal scores retain the earlier index.
-pub fn discords(profile : Profile, count : Int) -> Array[Match] {
+pub fn discords(profile : Profile, count : Int32) -> Array[Match] {
   let result : Array[Match] = []
   if count <= 0 {
     return result
@@ -48,7 +48,7 @@ pub fn discords(profile : Profile, count : Int) -> Array[Match] {
 /// This is not exhaustive k-motif search. AB-joins return E_KIND.
 pub fn motifs(
   profile : Profile,
-  count : Int,
+  count : Int32,
 ) -> Result[Array[Match], ProfileError] {
   if !profile.self_join {
     return Err(problem("E_KIND", "motifs require a self-join profile"))
