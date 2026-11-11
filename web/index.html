@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="MoonMatrixProfile：离线时间序列模式发现与异常候选分析。">
+  <title>MoonMatrixProfile · 时序观察室</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><svg width="30" height="27" viewBox="0 0 30 27" aria-hidden="true"><path d="M1 23V4l7 12 7-12v19m3-19h5c8 0 8 12 0 12h-5" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>MoonMatrixProfile<span>时序观察室</span></a><span class="local"><i></i>本地计算 · 数据保留在浏览器</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">TIME SERIES EXPLORER / 0.1.0</p><h1>找到藏在曲线里的模式。</h1><p>比较每一段波形，发现重复规律与值得关注的变化。</p></div><button id="export" class="outline">导出分析 JSON <span aria-hidden="true">↗</span></button></section>
+    <div class="workspace">
+      <aside class="controls">
+        <div class="section-number">01 / 数据与参数</div>
+        <label for="dataset">选择数据</label><select id="dataset"><option value="synthetic">合成信号 · 已知重复模式</option><option value="machine">真实数据 · 工业设备温度</option></select>
+        <div id="source-note" class="source-note"></div>
+        <label for="column">CSV 数值列名</label><input id="column" value="value" autocomplete="off">
+        <label class="upload" for="file"><span aria-hidden="true">＋</span> 导入 CSV / JSON<input type="file" id="file" accept=".csv,.json,text/csv,application/json"></label>
+        <p class="hint">JSON 为数值数组，null 表示缺失。CSV 首行为表头。交互视图最多 5,000 点。</p>
+        <div class="divider"></div>
+        <label for="window">窗口长度 <output id="window-value">48 个样本</output></label><input type="range" id="window" min="4" max="160" value="48" step="1">
+        <p class="hint">窗口决定所比较的波形长度。默认忽略距离过近的重叠片段。</p>
+        <button id="analyze" class="primary">运行分析 <span aria-hidden="true">→</span></button><button id="cancel" class="outline" hidden>取消计算</button>
+        <p id="status" role="status" aria-live="polite">准备数据…</p><p id="error" role="alert" hidden></p>
+        <div class="method"><span>如何阅读</span><p>距离低：存在相似的重复模式。<br>距离高：形状较为罕见。</p><p>距离经过标准化，不反映绝对温度或幅度；异常候选不等于设备故障。</p></div>
+      </aside>
+      <section class="analysis" aria-label="分析结果">
+        <div class="metrics"><div><span>样本数</span><strong id="metric-samples">—</strong></div><div><span>窗口长度</span><strong id="metric-window">—</strong></div><div><span>可比较窗口</span><strong id="metric-valid">—</strong></div><div><span>计算耗时</span><strong id="metric-time">—</strong></div></div>
+        <section class="plot-panel"><div class="panel-head"><div><span class="section-number">02 / 原始序列</span><h2 id="series-title">合成信号</h2></div><span class="legend"><i class="orange"></i>选中片段 <i class="gray"></i>最近邻</span></div><canvas id="signal" height="238" aria-label="原始时间序列，点击可选择查询片段"></canvas><div class="plot-footer"><span id="axis-note">横轴为从 0 开始的样本位置</span><button id="query" class="text-button">检索选中波形 →</button></div></section>
+        <section class="plot-panel profile-panel"><div class="panel-head"><div><span class="section-number">03 / MATRIX PROFILE</span><h2>每个片段，距离最近邻有多远</h2></div><span class="subtle">标准化欧氏距离</span></div><canvas id="profile" height="148" aria-label="每个片段与其最近邻的距离"></canvas></section>
+        <div class="findings-grid"><section class="findings"><div class="tabs" role="tablist" aria-label="结果类型"><button id="tab-discords" role="tab" aria-selected="true">异常候选</button><button id="tab-motifs" role="tab" aria-selected="false">重复模式</button><button id="tab-query" role="tab" aria-selected="false" hidden>检索结果</button></div><div id="findings-list"></div></section><section class="comparison"><span class="section-number">04 / 判断依据</span><h2>把两段波形放在一起</h2><canvas id="comparison" height="154" aria-label="选中片段与最近邻的标准化波形对比"></canvas><p id="comparison-note" class="hint">运行分析后，点击左侧结果查看对比。</p></section></div>
+      </section>
+    </div>
+    <footer><span>MoonBit 原生算法核心 · CLI 与浏览器共享同一实现</span><a href="data/SOURCES.md">数据来源与使用范围 ↗</a></footer>
+  </main><script type="module" src="app.js"></script>
+</body></html>

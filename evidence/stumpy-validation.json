@@ -1,0 +1,12 @@
+{
+  "stumpy": "1.14.1",
+  "numpy": "2.5.4",
+  "python": "3.12.8",
+  "cases": 64,
+  "checked_windows": 5037,
+  "max_absolute_error": 2.9044366992849943e-10,
+  "tolerance": "2e-6 * (1 + expected_distance)",
+  "seed": 73183,
+  "constant_policy": "exact masks, explicitly conditioned oracle inputs",
+  "passed": true
+}

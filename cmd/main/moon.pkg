@@ -1,0 +1,5 @@
+import {
+  "2973181701/moonmatrixprofile" @mp,
+}
+
+pkgtype(kind: "executable")

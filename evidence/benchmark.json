@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-11T02:01:16.826Z",
+  "node": "v26.8.2",
+  "platform": "win32",
+  "arch": "x64",
+  "cpu": "13th Gen Intel(R) Core(TM) i7-13620H",
+  "toolchain": "moon 0.1.20260920 (914d7da 2026-09-20) ~\\.moon\\bin\\moon.exe\nmoonc v0.10.14+7d59c7ec9 (2026-09-18) ~\\.moon\\bin\\moonc.exe\nmoonrun 0.1.20260920 (914d7da 2026-09-20) ~\\.moon\\bin\\moonrun.exe\n\nFeature flags enabled: rr_moon_mod,rr_moon_pkg",
+  "includes": "JSON parse, MoonBit-compiled JS core, candidate selection, JSON stringify, host parse",
+  "excludes": "build and initial warm-up; not a cross-language speed comparison",
+  "seed": 73183,
+  "measurements": [
+    {
+      "name": "random-512",
+      "samples": 512,
+      "window": 48,
+      "median_ms": 9.959699999999998,
+      "trials_ms": [
+        9.959699999999998,
+        16.336699999999993,
+        9.385999999999996
+      ]
+    },
+    {
+      "name": "random-1024",
+      "samples": 1024,
+      "window": 48,
+      "median_ms": 30.34019999999998,
+      "trials_ms": [
+        30.34019999999998,
+        32.1927,
+        26.69640000000001
+      ]
+    },
+    {
+      "name": "random-2048",
+      "samples": 2048,
+      "window": 48,
+      "median_ms": 116.55259999999998,
+      "trials_ms": [
+        112.47379999999998,
+        121.20709999999997,
+        116.55259999999998
+      ]
+    },
+    {
+      "name": "random-4096",
+      "samples": 4096,
+      "window": 48,
+      "median_ms": 432.03189999999995,
+      "trials_ms": [
+        437.299,
+        412.16059999999993,
+        432.03189999999995
+      ]
+    },
+    {
+      "name": "repeated-linear-512",
+      "samples": 512,
+      "window": 48,
+      "median_ms": 82.47270000000026,
+      "trials_ms": [
+        82.93170000000009,
+        82.47270000000026,
+        80.14509999999973
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+import {
+  "2973181701/moonmatrixprofile" @mp,
+}
+
+options(
+  link: { "js": { "exports": [ "analyze" ], "format": "esm" } },
+)
