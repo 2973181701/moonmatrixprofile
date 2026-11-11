@@ -30,6 +30,8 @@ MoonBit 实现自连接与有方向 AB-join、查询距离轮廓、重复模式�
 
 首版是离线单变量分析，异常候选不是设备故障概率。没有提交完整 NAB 检测成绩，没有 GPU/多变量/流式功能，也没有因少量样本测试就声称普适准确率。
 
-**尚待发布与申报的动作**
+**源码发布与尚待申报的动作**
 
-公开源代码仓库、配置真实 repository 元信息、推送可追溯提交、确认远程 CI、发布 Mooncakes 包，以及填写官方报名表。当前本地开发交付不等于这些外部动作已经完成。
+GitHub 公开源码仓库：[2973181701/moonmatrixprofile](https://github.com/2973181701/moonmatrixprofile)。repository 元信息已配置，开发提交可追溯，远程检查结果见 [Actions](https://github.com/2973181701/moonmatrixprofile/actions)。
+
+后续仍需发布 Mooncakes 包，以及填写官方报名表。GitHub 源码发布不等于这些外部动作或官方验收已经完成。

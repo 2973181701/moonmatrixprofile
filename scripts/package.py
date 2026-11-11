@@ -12,7 +12,7 @@ archive = destination / "MoonMatrixProfile-0.1.0.zip"
 directories = ["bridge", "cmd", "docs", "evidence", "examples", "scripts", "tests", "web", ".github"]
 files = [p for p in root.iterdir() if p.is_file() and (
     p.suffix in {".mbt", ".mbti", ".mod", ".pkg", ".md", ".mjs", ".json", ".txt"}
-    or p.name in {"LICENSE", ".gitignore"}
+    or p.name in {"LICENSE", ".gitignore", ".gitattributes"}
 )]
 for name in directories:
     files.extend(p for p in (root / name).rglob("*") if p.is_file() and "__pycache__" not in p.parts)

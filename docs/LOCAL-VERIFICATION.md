@@ -19,10 +19,12 @@ STUMPY 对照见 `evidence/stumpy-validation.json`，性能实测见 `evidence/b
 
 ## 打包
 
-`moon package --list` 检查通过；生成包不包含 `.venv`、`node_modules` 或构建缓存。repository 元信息为空会提示警告，这是远程仓库尚未创建的真实状态。
+`moon package --list` 检查通过；生成包不包含 `.venv`、`node_modules` 或构建缓存。初次本地打包时 repository 元信息尚未配置；GitHub 发布时已补为真实仓库地址。
 
 本地交付包可用 `python scripts/package.py` 重建。它包含源码、编译好的 `web/core.js`、数据许可、验证证据及截图，排除开发依赖与 Git 元数据。解压后直接运行 `npm run demo`；修改 MoonBit 核心后需要先运行 `npm run build`。ZIP 使用完整性校验并附 SHA-256。
 
 ## 尚未执行
 
-GitHub 公开发布、真实仓库地址配置、远程 CI、Mooncakes 发布、赛事报名与官方验收。
+初次本地验证时尚未执行外部发布。现已创建 [GitHub 公开仓库](https://github.com/2973181701/moonmatrixprofile)，配置真实仓库地址并推送提交。远程检查以 [Actions 的实际运行结果](https://github.com/2973181701/moonmatrixprofile/actions) 为准。
+
+Mooncakes 发布、赛事报名与官方验收仍未执行。
