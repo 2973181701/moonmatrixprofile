@@ -51,7 +51,7 @@ MoonMatrixProfile 将这类问题封装成可复用的 MoonBit 基础库。算�
 
 ### 从源码运行
 
-环境：MoonBit `moonc v0.10.14`（本地已验证），Node.js 22 或更新版本。Python 仅用于可选的参考对照与 ZIP 打包。
+环境：MoonBit `moonc v0.10.20` 对应的稳定工具链，Node.js 22 或更新版本。Python 仅用于可选的参考对照与 ZIP 打包。工具链安装见 [MoonBit 官网](https://www.moonbitlang.com/download/)。早期本地记录使用 v0.10.14；公开源码已迁移到当前稳定版的 `#derive` 语法，旧版本需要更新后再构建。
 
 ```sh
 git clone https://github.com/2973181701/moonmatrixprofile.git
@@ -95,9 +95,9 @@ let unusual = @mp.discords(profile, 2)
 
 | 接口 | 行为 |
 | --- | --- |
-| `matrix_profile(series, window, exclusion_zone?, max_pairs~)` | 自连接，默认排除距离不超过 `ceil(window/4)` 的邻近窗口 |
-| `ab_join(source, target, window, max_pairs~)` | 有方向的跨序列连接，每个 source 窗口在 target 中寻找邻居；不排除自身匹配 |
-| `distance_profile(query, target, max_pairs~)` | 查询片段与目标所有等长窗口的距离 |
+| `matrix_profile(series, window, exclusion_zone?, max_pairs?)` | 自连接，默认排除距离不超过 `ceil(window/4)` 的邻近窗口 |
+| `ab_join(source, target, window, max_pairs?)` | 有方向的跨序列连接，每个 source 窗口在 target 中寻找邻居；不排除自身匹配 |
+| `distance_profile(query, target, max_pairs?)` | 查询片段与目标所有等长窗口的距离 |
 | `motifs(profile, count)` | 自连接 profile 中互不重叠的低距离对；AB-join 返回错误 |
 | `discords(profile, count)` | 互不重叠的高距离窗口及其邻居 |
 | `parse_csv(text, column)` | 具名数值列解析，支持引号、转义、CRLF 与字段内换行 |

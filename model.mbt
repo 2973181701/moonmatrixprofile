@@ -1,9 +1,10 @@
 ///|
 /// Recoverable input/range error; failed operations return no partial result.
+#derive(Eq, Debug)
 pub struct ProfileError {
   code : String
   message : String
-} derive(Eq, Debug)
+}
 
 ///|
 pub extend ProfileError with Eq::{equal, not_equal}
@@ -19,6 +20,7 @@ fn problem(code : String, message : String) -> ProfileError {
 ///|
 /// Nearest-neighbour distances and zero-based target offsets. None means no
 /// valid neighbour. valid separately distinguishes an invalid source window.
+#derive(Debug)
 pub struct Profile {
   self_join : Bool
   window : Int
@@ -27,18 +29,19 @@ pub struct Profile {
   distances : Array[Double?]
   indices : Array[Int?]
   valid : Array[Bool]
-} derive(Debug)
+}
 
 ///|
 pub extend Profile with @debug.Debug::{to_repr}
 
 ///|
 /// Evidence for a pair of windows.
+#derive(Eq, Debug)
 pub struct Match {
   index : Int
   neighbor : Int
   distance : Double
-} derive(Eq, Debug)
+}
 
 ///|
 pub extend Match with Eq::{equal, not_equal}
